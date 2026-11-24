@@ -143,7 +143,8 @@ try {
     $sums = Get-ChildItem $out -File | Where-Object { $_.Name -ne 'SHA256SUMS.txt' } | Sort-Object Name | ForEach-Object {
         '{0} *{1}' -f (Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant(), $_.Name
     }
-    Set-Content -Path (Join-Path $out 'SHA256SUMS.txt') -Value $sums -Encoding ascii
+    # LF line endings so `sha256sum -c SHA256SUMS.txt` works on any system.
+    [System.IO.File]::WriteAllText((Join-Path $out 'SHA256SUMS.txt'), (($sums -join "`n") + "`n"), [System.Text.Encoding]::ASCII)
 
     Write-Host ''
     Write-Host "Done. FindIt $version release files:" -ForegroundColor Green

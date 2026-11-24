@@ -1,0 +1,282 @@
+{
+  "app": {
+    "title": "FindIt"
+  },
+  "search": {
+    "placeholder": "Search files and folders",
+    "label": "Search",
+    "history": "Recent searches (Alt+Down)",
+    "clearHistory": "Clear history",
+    "noHistory": "No recent searches yet",
+    "options": "Search options"
+  },
+  "chips": {
+    "label": "Show",
+    "all": "All",
+    "files": "Files",
+    "folders": "Folders",
+    "documents": "Documents",
+    "images": "Images",
+    "video": "Video",
+    "audio": "Audio",
+    "archives": "Archives",
+    "apps": "Apps"
+  },
+  "toggles": {
+    "matchCase": "Match case (Alt+C)",
+    "wholeWord": "Whole words (Alt+W)",
+    "matchPath": "Match full path (Alt+P)",
+    "diacritics": "Match accents (Alt+A)",
+    "preview": "Preview pane (Alt+V)",
+    "settings": "Settings",
+    "help": "Search syntax (F1)"
+  },
+  "columns": {
+    "name": "Name",
+    "path": "Path",
+    "size": "Size",
+    "modified": "Date modified",
+    "type": "Type",
+    "sortedAsc": "sorted ascending",
+    "sortedDesc": "sorted descending",
+    "resize": "Resize column"
+  },
+  "grid": {
+    "label": "Search results",
+    "folder": "File folder",
+    "fileSuffix": "File",
+    "cloud": "Online-only: not downloaded",
+    "link": "Link: not followed",
+    "deleted": "No longer exists",
+    "loadingRow": "Loading…"
+  },
+  "status": {
+    "results": "{count} results",
+    "result": "1 result",
+    "resultsLimited": "Showing {shown} of {count} results",
+    "loading": "Loading the index…",
+    "ready": "{count} items indexed",
+    "scanning": "Indexing {drive} {count} items",
+    "enumerating": "Reading {drive} (fast mode) {count} items",
+    "filling": "Reading sizes and dates on {drive}",
+    "waiting": "Waiting for {drive}",
+    "paused": "Indexing paused",
+    "notStarted": "Indexing has not started",
+    "partial": "Partial results: still indexing",
+    "denied": "{count} folders were skipped because access was denied",
+    "selected": "{count} selected",
+    "selectedSize": "{count} selected, {size}",
+    "fastOn": "Fast mode",
+    "fastStarting": "Starting fast mode…",
+    "fastDeclined": "Fast mode was not allowed, so standard mode is used",
+    "fastFailed": "Fast mode is unavailable, so standard mode is used",
+    "fastStopped": "Fast mode stopped, so standard mode is used",
+    "rebuildingCorrupt": "The saved index was damaged and is being rebuilt",
+    "timedOut": "The regular expression took too long. Showing partial results.",
+    "elapsed": "{ms} ms"
+  },
+  "empty": {
+    "noMatches": "No matches",
+    "noMatchesHint": "Check the spelling, try fewer words, or press F1 for the search syntax.",
+    "filterOn": "The \"{filter}\" filter is on. Choose \"All\" (Ctrl+1) to search everything.",
+    "stillIndexing": "Still indexing {drives}. More results will appear.",
+    "loading": "Loading the index…",
+    "notStarted": "Indexing has not started yet."
+  },
+  "menu": {
+    "label": "Actions",
+    "open": "Open",
+    "openWith": "Open with…",
+    "reveal": "Open containing folder",
+    "copy": "Copy",
+    "copyPath": "Copy path",
+    "copyName": "Copy name",
+    "rename": "Rename",
+    "delete": "Delete",
+    "properties": "Properties"
+  },
+  "dialogs": {
+    "close": "Close",
+    "cancel": "Cancel",
+    "delete": {
+      "title": "Move to the Recycle Bin?",
+      "one": "Move \"{name}\" to the Recycle Bin?",
+      "many": "Move {count} items to the Recycle Bin?",
+      "note": "You can restore them from the Recycle Bin later.",
+      "confirm": "Move to Recycle Bin",
+      "done": "Moved {count} to the Recycle Bin"
+    },
+    "rename": {
+      "title": "Rename",
+      "label": "New name",
+      "confirm": "Rename"
+    },
+    "fast": {
+      "title": "Enable fast mode?",
+      "what": "Fast mode reads the NTFS file table directly instead of opening every folder. Indexing becomes much faster, and changes are picked up through the NTFS change journal.",
+      "admin": "Windows will ask for administrator permission (a UAC prompt). With fast mode on, it asks each time FindIt starts.",
+      "helper": "A small helper process gets that permission. It can only read the file table and the change journal. It cannot change, delete or run anything, only your account can talk to it, and it stops when FindIt closes.",
+      "visibility": "Important: the names of all files on the drive become searchable from your account, including files in folders you cannot normally open, such as other users' folders. File contents are never read.",
+      "decline": "If you say no to the prompt, FindIt keeps working in standard mode.",
+      "confirm": "Enable fast mode",
+      "notNow": "Not now"
+    },
+    "copied": "Copied",
+    "copiedPaths": "Path copied",
+    "copiedNames": "Name copied"
+  },
+  "settings": {
+    "title": "Settings",
+    "tabs": {
+      "general": "General",
+      "indexing": "Indexing",
+      "search": "Search",
+      "about": "About"
+    },
+    "general": {
+      "hotkey": "Global shortcut to show FindIt",
+      "hotkeyHelp": "Click the box and press the keys, for example Ctrl+Alt+Space. Leave it empty for no shortcut.",
+      "hotkeyRecording": "Press the keys…",
+      "tray": "Show the FindIt icon in the notification area",
+      "closeToTray": "Closing the window keeps FindIt running in the notification area",
+      "startWithWindows": "Start FindIt when I sign in to Windows",
+      "theme": "Theme",
+      "themeSystem": "Follow Windows",
+      "themeLight": "Light",
+      "themeDark": "Dark"
+    },
+    "indexing": {
+      "drives": "Drives to index",
+      "drivesHelp": "Fixed drives are indexed by default. Removable and network drives are indexed only if you tick them.",
+      "kindFixed": "Local disk",
+      "kindRemovable": "Removable drive",
+      "kindNetwork": "Network drive",
+      "mode": "Indexing mode",
+      "modeStandard": "Standard mode: no administrator rights needed",
+      "modeFast": "Fast mode is on",
+      "enableFast": "Enable fast mode…",
+      "disableFast": "Turn off fast mode",
+      "fastUnsupported": "Fast mode needs a local NTFS drive.",
+      "exclusions": "Excluded folders",
+      "exclusionsHelp": "One per line. A name (node_modules) skips that folder everywhere; a full path (C:\\Windows\\WinSxS) skips that one folder.",
+      "hidden": "Show hidden files and folders",
+      "system": "Show system files and folders",
+      "pause": "Pause indexing",
+      "rebuild": "Rebuild index",
+      "rebuildHelp": "Throws the index away and scans everything again.",
+      "rebuildStarted": "Rebuilding the index…"
+    },
+    "search": {
+      "defaults": "Defaults for new windows",
+      "matchCase": "Match case",
+      "matchPath": "Match the full path",
+      "wholeWord": "Whole words only",
+      "diacritics": "Match accents (é is different from e)",
+      "limit": "Result limit",
+      "limitHelp": "0 shows every match."
+    },
+    "about": {
+      "version": "Version {version}",
+      "privacy": "FindIt works only on this PC. It has no accounts and sends no data anywhere. The only network request is the update check, and only when you press the button. The index holds file names, paths, sizes, dates and attributes, never file contents.",
+      "dataFolder": "Index and settings",
+      "logFolder": "Logs",
+      "open": "Open",
+      "portable": "Portable mode: data is stored next to the program.",
+      "memory": "Memory in use: {mb} MB",
+      "licenses": "FindIt is open source under the MIT license. Third-party licenses are listed in THIRD_PARTY_LICENSES.md in the repository."
+    },
+    "save": "Save",
+    "saved": "Settings saved"
+  },
+  "welcome": {
+    "title": "Welcome to FindIt",
+    "step": "Step {n} of 3",
+    "drivesTitle": "Which drives should FindIt search?",
+    "drivesBody": "FindIt keeps a list of file names so it can find anything as you type. Nothing leaves this PC.",
+    "fastTitle": "Standard or fast mode?",
+    "fastBody": "Standard mode works without administrator rights. Fast mode indexes much faster but asks for administrator permission each time FindIt starts.",
+    "standardOption": "Standard mode (recommended)",
+    "fastOption": "Fast mode (asks for administrator permission)",
+    "fastNotAvailable": "Fast mode needs a local NTFS drive, so FindIt will use standard mode.",
+    "startTitle": "Ready to start",
+    "startBody": "FindIt will now build its index. You can search right away: results appear while indexing runs. Press Ctrl+Alt+Space at any time to open FindIt.",
+    "next": "Next",
+    "back": "Back",
+    "start": "Start indexing"
+  },
+  "help": {
+    "title": "Search syntax",
+    "intro": "Type words to find names that contain all of them, in any order. Matching ignores case and accents.",
+    "rows": [
+      ["report budget", "names containing both words"],
+      ["jpg|png", "either word (OR)"],
+      ["!backup", "names without the word (NOT)"],
+      ["<a b>|c", "grouping"],
+      ["\"annual report\"", "an exact phrase"],
+      ["*.docx   IMG_????.jpg", "wildcards: * any text, ? one character (whole name)"],
+      ["regex:^IMG_\\d{4}", "regular expression (quote it if it contains | or spaces)"],
+      ["path:Projects\\2026", "match the full path (any term with \\ does this too)"],
+      ["ext:pdf;docx", "extensions"],
+      ["size:>100mb   size:1mb..10mb", "size: > < >= <= = or a range; units kb mb gb"],
+      ["dm:today   dm:last7days   dm:2026-01-01..2026-03-31", "date modified"],
+      ["type:image", "image, video, audio, doc, archive, exe, code"],
+      ["file:   folder:", "only files or only folders"],
+      ["case:Readme   word:report   diacritics:café", "per term; on their own (case: Readme) they apply to the whole search"]
+    ],
+    "keysTitle": "Keyboard",
+    "keys": [
+      ["Ctrl+F, Ctrl+L", "focus the search box"],
+      ["Down arrow", "move into the results"],
+      ["Enter", "open"],
+      ["Ctrl+Enter", "open the containing folder"],
+      ["Alt+Enter", "properties"],
+      ["Ctrl+C / Ctrl+Shift+C", "copy the file / copy its path"],
+      ["F2", "rename"],
+      ["Delete", "move to the Recycle Bin"],
+      ["Shift+F10, Menu key", "more actions"],
+      ["Ctrl+1 … Ctrl+9", "filters"],
+      ["Esc", "clear the search; press again to hide FindIt"]
+    ]
+  },
+  "preview": {
+    "title": "Preview",
+    "empty": "Select a file to preview it.",
+    "folder": "Folders have no preview.",
+    "cloud": "This file is online-only. FindIt does not download it.",
+    "tooLarge": "This image is too large to preview.",
+    "unsupported": "There is no preview for this type of file.",
+    "binary": "This file does not contain text.",
+    "gone": "This item no longer exists."
+  },
+  "updates": {
+    "check": "Check for updates",
+    "checking": "Checking…",
+    "upToDate": "You have the latest version.",
+    "available": "Version {version} is available.",
+    "download": "Open the download page",
+    "failed": "Could not check for updates. Check your internet connection."
+  },
+  "errors": {
+    "nameEmpty": "Enter a name.",
+    "nameTooLong": "The name is too long (255 characters at most).",
+    "nameInvalidChars": "A name cannot contain any of these characters: \\ / : * ? \" < > |",
+    "nameTrailing": "A name cannot end with a dot or a space.",
+    "nameReserved": "Windows reserves this name. Choose another one.",
+    "hotkeyTaken": "The shortcut {combo} is already used by another program. Choose another one.",
+    "hotkeyInvalid": "\"{combo}\" is not a valid shortcut.",
+    "tooManyToOpen": "Select at most 20 items to open at once.",
+    "tooManySelected": "Too many items are selected for this action.",
+    "itemGone": "The item no longer exists.",
+    "queryTooLong": "The search text is too long.",
+    "generic": "Something went wrong: {message}"
+  },
+  "tray": {
+    "open": "Open FindIt",
+    "pause": "Pause indexing",
+    "exit": "Exit"
+  },
+  "crash": {
+    "title": "FindIt",
+    "body": "FindIt ran into an unexpected problem and has to close. The details were saved in the log file.\n\nRestart FindIt now?"
+  }
+}

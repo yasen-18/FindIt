@@ -1,0 +1,47 @@
+name: Release
+
+# Push a tag such as v1.0.0 to build the release files and open a draft GitHub
+# Release with them. Review the draft, then publish it by hand.
+on:
+  push:
+    tags: ["v*.*.*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Rust toolchain
+        run: |
+          rustup update stable --no-self-update
+          rustup default stable
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Build release files
+        shell: pwsh
+        env:
+          # Optional: add these repository secrets to sign the files.
+          FINDIT_SIGN_CERT: ${{ secrets.FINDIT_SIGN_CERT_PATH }}
+          FINDIT_SIGN_PASSWORD: ${{ secrets.FINDIT_SIGN_PASSWORD }}
+        run: ./build.ps1
+
+      - name: Create draft release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = "${{ github.ref_name }}"
+          $notes = (Get-Content docs/RELEASE_TEMPLATE.md -Raw).Replace('{{VERSION}}', $tag.TrimStart('v'))
+          Set-Content -Path release-notes.md -Value $notes -Encoding utf8
+          gh release create $tag dist-release/* --draft --title "FindIt $tag" --notes-file release-notes.md

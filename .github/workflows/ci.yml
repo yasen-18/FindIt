@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Rust toolchain
+        run: |
+          rustup update stable --no-self-update
+          rustup default stable
+          rustup component add clippy rustfmt
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Install JavaScript packages
+        run: npm ci --no-audit --no-fund
+
+      - name: Typecheck and build the web UI
+        run: npm run build
+
+      - name: Format check
+        run: cargo fmt --all -- --check
+
+      - name: Clippy (warnings are errors)
+        run: cargo clippy --workspace --all-targets --locked -- -D warnings
+
+      - name: Tests
+        run: cargo test --workspace --locked
+
+      - name: Benchmark (1,000,000 entries)
+        # Hosted runners are small and noisy, so a missed target is reported but does not fail the build.
+        continue-on-error: true
+        run: cargo bench -p findit-core --bench search --locked
+
+      - name: Release build
+        shell: pwsh
+        run: ./build.ps1 -SkipTests
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: FindIt-windows-x64
+          path: dist-release/*
+          if-no-files-found: error

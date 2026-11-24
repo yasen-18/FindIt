@@ -1,0 +1,23 @@
+# Build output
+/target/
+/dist/
+/dist-release/
+/src-tauri/gen/
+node_modules/
+
+# Local data and logs
+FindIt-data/
+*.snapshot
+*.log
+
+# Editors and OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+Thumbs.db
+desktop.ini
+
+# Signing material must never be committed
+*.pfx
+*.p12

@@ -46,7 +46,7 @@ contents), works fully offline, and needs no administrator rights.
 ## Install
 
 FindIt runs on **Windows 10 22H2 or Windows 11, x64**. Download from the
-[Releases page](https://github.com/Yasen-magnit-za-025/FindIt/releases):
+[Releases page](https://github.com/yasen-18/FindIt/releases):
 
 | File | Use it if |
 |------|-----------|
@@ -205,7 +205,7 @@ Prerequisites (one time):
 Then, in PowerShell:
 
 ```powershell
-git clone https://github.com/Yasen-magnit-za-025/FindIt.git
+git clone https://github.com/yasen-18/FindIt.git
 cd FindIt
 .\build.ps1
 ```

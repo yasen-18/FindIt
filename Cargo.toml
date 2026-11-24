@@ -10,7 +10,7 @@ edition = "2021"
 license = "MIT"
 authors = ["FindIt contributors"]
 rust-version = "1.85"
-repository = "https://github.com/Yasen-magnit-za-025/FindIt"
+repository = "https://github.com/yasen-18/FindIt"
 
 [workspace.lints.rust]
 unsafe_op_in_unsafe_fn = "deny"

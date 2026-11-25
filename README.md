@@ -8,6 +8,12 @@ FindIt exists because File Explorer's search is slow, misses files, and cannot
 combine simple filters. FindIt keeps its own compact index of file *names* (never
 contents), works fully offline, and needs no administrator rights.
 
+### ⬇ Download
+
+**[Download the installer (FindIt-Setup-x64.exe)](https://github.com/yasen-18/FindIt/releases/latest/download/FindIt-Setup-x64.exe)** · [Portable zip](https://github.com/yasen-18/FindIt/releases/latest/download/FindIt-portable-x64.zip) · [All files and checksums](https://github.com/yasen-18/FindIt/releases/latest)
+
+Windows 10 22H2 or Windows 11, 64-bit. No administrator rights needed.
+
 ![FindIt main window](docs/screenshot.png)
 
 - [Features](#features)

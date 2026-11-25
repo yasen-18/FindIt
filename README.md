@@ -10,7 +10,7 @@ contents), works fully offline, and needs no administrator rights.
 
 ### ⬇ Download
 
-**[Download the installer (FindIt-Setup-x64.exe)](https://github.com/yasen-18/FindIt/releases/latest/download/FindIt-Setup-x64.exe)** · [Portable zip](https://github.com/yasen-18/FindIt/releases/latest/download/FindIt-portable-x64.zip) · [All files and checksums](https://github.com/yasen-18/FindIt/releases/latest)
+**[Download the installer (FindIt-Setup-x64.exe)](https://github.com/yasen-18/FindIt/raw/main/FindIt-Setup-x64.exe)** (also in the file list above) · [Portable zip](https://github.com/yasen-18/FindIt/releases/latest/download/FindIt-portable-x64.zip) · [All files and checksums](https://github.com/yasen-18/FindIt/releases/latest)
 
 Windows 10 22H2 or Windows 11, 64-bit. No administrator rights needed.
 
